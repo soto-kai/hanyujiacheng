@@ -229,6 +229,7 @@ window.onload=()=>{
 			document.getElementById('wrong').innerHTML="間違えた単語でもう一度テスト:"+wrong;
 			wrong=[];
 			words=wrongwords;
+			wrongwords=[];
 		}
 		input="";
 		output.innerHTML=input;
