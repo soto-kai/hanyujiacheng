@@ -66,7 +66,7 @@ window.onload=()=>{
 		["著名","zhùmíng"],
 		["柴达木盆地","cháidámùpéndì"],
 		["好消息","hǎoxiāoxi"],
-		["公园","sīxgōngyuániǎngjiā"],
+		["公园","gōngyuán"],
 		["跑步","pǎobù"],
 		["种","zhǒng"],
 		["智能","zhìnéng"],
