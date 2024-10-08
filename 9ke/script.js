@@ -10,8 +10,7 @@ window.onload=()=>{
 		["快递","kuàidì"],
 		["取","qǔ"],
 		["多","duō"],
-		["你","nǐ"],
-		["的话","dehuà"],
+		["的话","de huà"],
 		["只","zhǐ"],
 		["需要","xūyào"],
 		["喔","ò"],
@@ -40,13 +39,14 @@ window.onload=()=>{
 		["落后","luòhòu"],
 		["文件","wénjiàn"],
 		["燕子","yànzi"],
-		["飞","wáng"],
+		["飞","fēi"],
 		["南方","nánfāng"],
 		["孩子","háizi"],
 		["玩具","wánjù"],
 		["多么","duōme"],
 		["些","xiē"],
 		["可怜","kělián"],
+		["哪","na"],
 		["支付","zhīfù"],
 		["方便","fāngbiàn"],
 		["如果","rúguǒ"],
@@ -75,7 +75,7 @@ window.onload=()=>{
 		["吉祥寺","jíxiángsì"],
 		["地上","dìshang"],
 		["茶叶","cháyè"],
-		
+
 	];
 	const ja =document.getElementById('ja');
 	const btn=document.getElementById('btn');
