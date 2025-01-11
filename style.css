@@ -1,0 +1,96 @@
+/* 共通のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #4CAF50;
+  padding: 15px;
+  text-align: center;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+/* タイトル */
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title h1 {
+  font-size: 2em;
+  color: #4CAF50;
+}
+
+/* 注意書き */
+p {
+  text-align: center;
+  margin: 10px;
+}
+
+p strong {
+  color: #e74c3c;
+}
+
+/* リンク */
+.links {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.links a {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+  background-color: #45a049;
+}
+
+/* フッター */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .links a {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+}
