@@ -118,9 +118,9 @@ window.onload=()=>{
 		["妻子","qīzi"],
 		["儿子","érzi"],
 		["女儿","nǚ'ér"],
-		
+
 	];
-	
+
 	const ja =document.getElementById('ja');
 	const btn=document.getElementById('btn');
 	const output=document.getElementById('output');
@@ -129,8 +129,8 @@ window.onload=()=>{
 	let input = "";
 
 	function keydown_ivent(e) {
-		
-		
+
+
 		switch (e.key) {
 			case 'Backspace':
 				input = input.slice(0,input.length-1);
@@ -146,7 +146,6 @@ window.onload=()=>{
 			default:
 				input=String(input)+String(e.key);
 			};
-		console.log(input);
 		switch (input.slice(-2)) {
 			case 'a1':
 				input= String(input.slice(0,input.length-2))+'ā';
@@ -220,13 +219,13 @@ window.onload=()=>{
 			case 'o4':
 				input= String(input.slice(0,input.length-2))+'ò';
 				break;
-			
+
 		};
-		
+
 		output.innerHTML = input;
 		return false;
 	};
-	
+
 	let wrong=[];
 	let wrongwords=[];
 	let index=0;
@@ -242,12 +241,10 @@ window.onload=()=>{
 			msg=`× 正:${words[index][1]}`;
 			wrong.push(words[index][0]);
 			wrongwords.push([String(words[index][0]),String(words[index][1])]);
-			console.log(wrongwords);
 		}
 		if(index==words.length-1){
-			msg+=`<br>全${words.length}問中${correct}問正解`;
 			index=-1;
-			document.getElementById('wrong').innerHTML="間違えた単語でもう一度テスト:"+wrong;
+			document.getElementById('wrong').innerHTML=`全${words.length}問中${correct}問正解<br>`+"間違えた単語でもう一度テスト:<br>"+wrong;
 			wrong=[];
 			words=wrongwords;
 			wrongwords=[];
@@ -261,8 +258,8 @@ window.onload=()=>{
 		},1500);
 		setItem(++index);
 		output.focus();
-		
-		
+
+
 	});
 	function setItem(index){
 		ja.textContent=words[index][0];

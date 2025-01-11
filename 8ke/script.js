@@ -7,7 +7,7 @@ window.onload=()=>{
 		["差别","chābié"],
 		["比","bǐ"],
 		["近","jìn"],
-		["一点儿","yìdiǎnr"],
+		["一点儿","diǎnr"],
 		["但是","dànshì"],
 		["水平","shuǐpíng"],
 		["没有","méiyou"],
@@ -49,16 +49,16 @@ window.onload=()=>{
 		["交通","jiāotōng"],
 		["规则","guīzé"],
 		["前","qián"],
-		["安检","ānjiǎn"],
+		["安检","njiǎn"],
 		["迷路","mílù"],
 		["小心","xiǎoxīn"],
-		["过","jì"],
+		["过","guò"],
 		["口","kǒu"],
 		["气","qì"],
 		["俯卧撑","fǔwòchēng"],
 		["醉","zuì"],
 		["冷","lěng"],
-		["安静","ānjìng"],
+		["安静","njìng"],
 		["酒","jiǔ"]
 	];
 	const ja =document.getElementById('ja');
@@ -69,8 +69,8 @@ window.onload=()=>{
 	let input = "";
 
 	function keydown_ivent(e) {
-		
-		
+
+
 		switch (e.key) {
 			case 'Backspace':
 				input = input.slice(0,input.length-1);
@@ -86,7 +86,7 @@ window.onload=()=>{
 			default:
 				input=String(input)+String(e.key);
 			};
-		console.log(input);
+
 		switch (input.slice(-2)) {
 			case 'a1':
 				input= String(input.slice(0,input.length-2))+'ā';
@@ -160,13 +160,13 @@ window.onload=()=>{
 			case 'o4':
 				input= String(input.slice(0,input.length-2))+'ò';
 				break;
-			
+
 		};
-		
+
 		output.innerHTML = input;
 		return false;
 	};
-	
+
 	let wrong=[];
 	let wrongwords=[];
 	let index=0;
@@ -182,14 +182,14 @@ window.onload=()=>{
 			msg=`× 正:${words[index][1]}`;
 			wrong.push(words[index][0]);
 			wrongwords.push([String(words[index][0]),String(words[index][1])]);
-			console.log(wrongwords);
+
 		}
 		if(index==words.length-1){
-			msg+=`<br>全${words.length}問中${correct}問正解`;
 			index=-1;
-			document.getElementById('wrong').innerHTML="間違えた単語でもう一度テスト:"+wrong;
+			document.getElementById('wrong').innerHTML=`全${words.length}問中${correct}問正解<br>`+"間違えた単語でもう一度テスト:<br>"+wrong;
 			wrong=[];
 			words=wrongwords;
+			wrongwords=[];
 		}
 		input="";
 		output.innerHTML=input;
@@ -200,8 +200,8 @@ window.onload=()=>{
 		},1500);
 		setItem(++index);
 		output.focus();
-		
-		
+
+
 	});
 	function setItem(index){
 		ja.textContent=words[index][0];

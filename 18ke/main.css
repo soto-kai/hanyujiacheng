@@ -1,33 +1,131 @@
-.current{
-	margin-left: 0px;
-}
-#container{
+/* 共通のスタイル */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	background-color: #0e0b39;
+	color: #eeea02;
+  }
+
+/* ヘッダー */
+  .header {
+	background-color: #000000;
+	padding: 7px;
+	font-size: 1em;
+	text-align: left;
+  }
+    .header a {
+	color: white;
+	text-decoration: none;
+
+	font-weight: bold;
+    }
+
+    .header a:hover {
+	text-decoration: underline;
+    }
+
+
+  /* 説明テキスト */
+  #description {
+	padding: 10px;
+	background-color: #181360;
+	border-left: 5px solid #eeea02;
+	margin: 10px;
+	border-radius: 5px;
+  }
+
+  .header h2 {
+	font-size: 1.5em;
+	color: #eeea02;
+	margin-top: 20px;
+  }
+
+  /* ボタン風リンク */
+  .header a {
+	display: inline-block; /* ブロック要素化 */
+	margin: 10px 5px; /* ボタン間の余白 */
+	padding: 5px 10px; /* ボタン内の余白 */
+	background-color: #eeea02;
+	color: black;
+	text-decoration: none; /* 下線を除去 */
+	border-radius: 5px; /* 角を丸める */
+	font-weight: bold; /* テキストを太字に */
+	text-align: center; /* テキストを中央揃え */
+	transition: background-color 0.3s ease; /* ホバー時のエフェクト */
+  }
+
+  .header a:hover {
+	background-color: #eeea02c7; /* ホバー時の背景色 */
+  }
+
+
+  /* コンテナ */
+  #container {
+	text-align: center;
+	margin: 30px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-}
-#ja{
+  }
+
+  #container p {
 	font-size:60px;
 	margin:0px;
-}
-#result{
-	font-size:70px;
-	color:brown;
-	transition:0.5s;
-	margin:10px;
-	opacity:1;
-}
-#result.fade{
-	opacity:0;	
-}
-#output{
+  }
+  #output{
 	font-size:80px;
 	margin:0px;
 	width:600px;
 	height:90px;
 	text-align:center;
 }
-#btn{
-	font-size:30px;
-	cursor:pointer;
-}
+
+  /* ボタン */
+  #btn {
+	display: inline-block;
+	margin: 10px auto;
+	padding: 10px 20px;
+	background-color: #eeea02;
+	color: black;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-size:1em;
+  }
+
+  #btn:hover {
+	background-color: #eeea02c7;
+  }
+
+  /* 結果表示用 */
+  #result {
+	font-size:10px;
+	color:brown;
+	transition:0.5s;
+	margin:10px;
+	opacity:1;
+  }
+
+  #wrong {
+	color: #e74c3c;
+	font-weight: bold;
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 600px) {
+	#description {
+	  font-size: 0.9em;
+	}
+
+	#description h2 {
+	  font-size: 1.2em;
+	}
+
+	#btn {
+	  width: 100%;
+	  padding: 15px;
+	}
+  }

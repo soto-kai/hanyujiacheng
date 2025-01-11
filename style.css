@@ -4,15 +4,15 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #0e0b39;
+  color: #eeea02;
 }
 
 /* ヘッダー */
 .header {
-  background-color: #4CAF50;
+  background-color: #000000;
   padding: 15px;
-  text-align: center;
+  text-align: right;
 }
 
 .header a {
@@ -34,7 +34,7 @@ body {
 
 .title h1 {
   font-size: 2em;
-  color: #4CAF50;
+  color: #eeea02;
 }
 
 /* 注意書き */
@@ -54,26 +54,28 @@ p strong {
 }
 
 .links a {
-  display: inline-block;
+  display: inline-block; /* ブロック要素化 */
   margin: 5px 10px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  padding: 5px 0; /* ボタン内の余白 */
+  width: 100px; /* 固定幅 */
+  height: 40px; /* 固定高さ */
+  background-color: #eeea02;
+  color: black;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1em;
   transition: background-color 0.3s ease;
+  text-align: center; /* テキストの水平中央揃え */
+  line-height: 40px; /* 高さと一致させて垂直中央揃え */
 }
 
 .links a:hover {
-  background-color: #45a049;
+  background-color: #eeea02c7;
 }
-
 /* フッター */
 .footer {
   background-color: #333;
   color: white;
-  text-align: center;
   padding: 15px;
   margin-top: 20px;
   font-size: 0.9em;
@@ -81,6 +83,7 @@ p strong {
 
 .footer p {
   margin: 0;
+  text-align: left;
 }
 
 /* レスポンシブ対応 */

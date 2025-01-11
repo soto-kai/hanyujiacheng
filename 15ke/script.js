@@ -1,6 +1,6 @@
 'use strict';
 window.onload=()=>{
-	const words=[
+	let words=[
 		["才","cái"],
 		["堵车","dǔchē"],
 		["大城市","dàchéngshì"],
@@ -47,7 +47,7 @@ window.onload=()=>{
 		["道","dào"],
 		["题","tí"],
 		["本地人","běndìrén"],
-		["向导","iàngdǎo"],
+		["向导","iàngdǎo"]
 
 
 	];
@@ -57,6 +57,7 @@ window.onload=()=>{
 	const result=document.getElementById('result');
 	document.addEventListener('keydown', keydown_ivent);
 	let input = "";
+
 	function keydown_ivent(e) {
 
 
@@ -75,7 +76,7 @@ window.onload=()=>{
 			default:
 				input=String(input)+String(e.key);
 			};
-		console.log(input);
+
 		switch (input.slice(-2)) {
 			case 'a1':
 				input= String(input.slice(0,input.length-2))+'ā';
@@ -157,6 +158,7 @@ window.onload=()=>{
 	};
 
 	let wrong=[];
+	let wrongwords=[];
 	let index=0;
 	let correct=0;
 	btn.addEventListener('click',()=>{
@@ -169,12 +171,15 @@ window.onload=()=>{
 		}else{
 			msg=`× 正:${words[index][1]}`;
 			wrong.push(words[index][0]);
+			wrongwords.push([String(words[index][0]),String(words[index][1])]);
+
 		}
 		if(index==words.length-1){
-			msg+=`<br>全${words.length}問中${correct}問正解`;
 			index=-1;
-			document.getElementById('wrong').innerHTML="間違えた文字:"+wrong;
+			document.getElementById('wrong').innerHTML=`全${words.length}問中${correct}問正解<br>`+"間違えた単語でもう一度テスト:<br>"+wrong;
 			wrong=[];
+			words=wrongwords;
+			wrongwords=[];
 		}
 		input="";
 		output.innerHTML=input;

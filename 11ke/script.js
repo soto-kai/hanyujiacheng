@@ -1,71 +1,71 @@
 'use strict';
 window.onload=()=>{
-	const words=[
-		["外面","xuǎn"],
-		["下","wénhuà"],
-		["雨","mén"],
-		["伞","yǒuyìsi"],
-		["坏了","tǐng"],
-		["把","búguò"],
-		["得","yǒude"],
-		["跟","cí"],
-		["认识","tīngbudǒng"],
-		["高中","yìsi"],
-		["同学","zhōngwén"],
-		["怪不得","zěnme"],
-		["关系","pái"],
-		["见面","jié"],
-		["就","zǎo"],
-		["吵架","qǐ"],
-		["才","tīngshuō"],
-		["说明","shìma"],
-		["感情","duō"],
-		["对方","ná"],
-		["当","dào"],
-		["外人","yōu"],
-		["附近","érqiě"],
-		["黄金周","jígé"],
-		["期间","shǎo"],
-		["店","á"],
-		["客人","xuéfēn"],
-		["跑","bàn"],
-		["期末","qiānxū"],
-		["报告","yǔyán"],
-		["屏幕","yǒuqù"],
-		["摔","xiànxiàng"],
-		["碎","zuò"],
-		["手续","chéngshì"],
-		["学生证","lìshǐ"],
-		["弄","yōujiǔ"],
-		["坏","xīnli"],
-		["责怪","kāixīn"],
-		["骗","jíshí"],
-		["房间","càiliàng"],
-		["羽绒服","dà"],
-		["脱","zhīqián"],
-		["北海道","jìhuàshū"],
-		["冬天","gēn"],
-		["雪","liánxi"],
-		["日语","fāyán"],
-		["流利","tào"],
-		["女朋友","xīfú"],
-		["长","yang"],
-		["漂亮","chǒngwù"],
-		["篮球","jiǎnyā"],
-		["特别","Liú"],
-		["家人","zhòng"],
-		["旅行","cǎipiào"],
-		["任何","yuǎn"],
-		["广播","zhòng"],
-		["讲座","shēn"],
-		["上海话","àolínpǐkè"],
-		["福建话","jīnpái"],
-		["打瞌睡","dōngjīngqíngkōngtǎ"],
-		["脸","chángchéng"],
-		["红","shēn"],
-		["麻婆豆腐","àolínpǐkè"],
-		["烤鸭","jīnpái"],
-		["一般","dōngjīngqíngkōngtǎ"],
+	let words=[
+		["外面","wàimiàn"],
+		["下","xià"],
+		["雨","yǔ"],
+		["伞","sǎn"],
+		["坏了","huàile"],
+		["把","bǎ"],
+		["得","de"],
+		["跟","gēn"],
+		["认识","rènshi"],
+		["高中","gāozhōng"],
+		["同学","tóngxué"],
+		["怪不得","guàibude"],
+		["关系","guānxi"],
+		["见面","jiànmiàn"],
+		["就","jiù"],
+		["吵架","chǎojià"],
+		["才","cái"],
+		["说明","shuōmíng"],
+		["感情","gǎnqíng"],
+		["对方","duìfāng"],
+		["当","dàng"],
+		["外人","wàirén"],
+		["附近","fùjìn"],
+		["黄金周","huángjīnzhōu"],
+		["期间","qījiān"],
+		["店","diàn"],
+		["客人","kèren"],
+		["跑","pǎo"],
+		["期末","qīmò"],
+		["报告","bàogào"],
+		["屏幕","píngmù"],
+		["摔","shuāi"],
+		["碎","suì"],
+		["手续","shǒuxù"],
+		["学生证","xuéshēngzhèng"],
+		["弄","nòng"],
+		["坏","huài"],
+		["责怪","zéguài"],
+		["骗","piàn"],
+		["房间","fángjiān"],
+		["羽绒服","yǔróngfú"],
+		["脱","tuō"],
+		["北海道","běihǎidào"],
+		["冬天","dōngtiān"],
+		["雪","xuě"],
+		["日语","rìyǔ"],
+		["流利","liúlì"],
+		["女朋友","nǚpéngyou"],
+		["长","zhǎng"],
+		["漂亮","piàoliang"],
+		["篮球","lánqiú"],
+		["特别","tèbié"],
+		["家人","jiārén"],
+		["旅行","lǚxíng"],
+		["任何","rènhé"],
+		["广播","guǎngbō"],
+		["讲座","jiǎngzuò"],
+		["上海话","shànghǎihuà"],
+		["福建话","fújiànhuà"],
+		["打瞌睡","dǎkēshuì"],
+		["脸","liǎn"],
+		["红","hóng"],
+		["麻婆豆腐","mápódòufu"],
+		["烤鸭","kǎoyā"],
+		["一般","yìbān"]
 
 	];
 	const ja =document.getElementById('ja');
@@ -74,9 +74,10 @@ window.onload=()=>{
 	const result=document.getElementById('result');
 	document.addEventListener('keydown', keydown_ivent);
 	let input = "";
+
 	function keydown_ivent(e) {
-		
-		
+
+
 		switch (e.key) {
 			case 'Backspace':
 				input = input.slice(0,input.length-1);
@@ -92,7 +93,7 @@ window.onload=()=>{
 			default:
 				input=String(input)+String(e.key);
 			};
-		console.log(input);
+
 		switch (input.slice(-2)) {
 			case 'a1':
 				input= String(input.slice(0,input.length-2))+'ā';
@@ -166,14 +167,15 @@ window.onload=()=>{
 			case 'o4':
 				input= String(input.slice(0,input.length-2))+'ò';
 				break;
-			
+
 		};
-		
+
 		output.innerHTML = input;
 		return false;
 	};
-	
+
 	let wrong=[];
+	let wrongwords=[];
 	let index=0;
 	let correct=0;
 	btn.addEventListener('click',()=>{
@@ -186,12 +188,15 @@ window.onload=()=>{
 		}else{
 			msg=`× 正:${words[index][1]}`;
 			wrong.push(words[index][0]);
+			wrongwords.push([String(words[index][0]),String(words[index][1])]);
+
 		}
 		if(index==words.length-1){
-			msg+=`<br>全${words.length}問中${correct}問正解`;
 			index=-1;
-			document.getElementById('wrong').innerHTML="間違えた文字:"+wrong;
+			document.getElementById('wrong').innerHTML=`全${words.length}問中${correct}問正解<br>`+"間違えた単語でもう一度テスト:<br>"+wrong;
 			wrong=[];
+			words=wrongwords;
+			wrongwords=[];
 		}
 		input="";
 		output.innerHTML=input;
@@ -202,8 +207,8 @@ window.onload=()=>{
 		},1500);
 		setItem(++index);
 		output.focus();
-		
-		
+
+
 	});
 	function setItem(index){
 		ja.textContent=words[index][0];
