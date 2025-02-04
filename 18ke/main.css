@@ -15,16 +15,6 @@ body {
 	font-size: 1em;
 	text-align: left;
   }
-    .header a {
-	color: white;
-	text-decoration: none;
-
-	font-weight: bold;
-    }
-
-    .header a:hover {
-	text-decoration: underline;
-    }
 
 
   /* 説明テキスト */
@@ -60,25 +50,65 @@ body {
 	background-color: #eeea02c7; /* ホバー時の背景色 */
   }
 
+  .header button {
+	display: inline-block; /* ブロック要素化 */
+	margin: 10px 5px; /* ボタン間の余白 */
+	padding: 5px 10px; /* ボタン内の余白 */
+	background-color: #31ee02;
+	color: black;
+	text-decoration: none; /* 下線を除去 */
+	border-radius: 5px; /* 角を丸める */
+	font-weight: bold; /* テキストを太字に */
+	text-align: center; /* テキストを中央揃え */
+	transition: background-color 0.3s ease; /* ホバー時のエフェクト */
+  }
 
-  /* コンテナ */
+  .header button:hover {
+	background-color: #02ee1dc7; /* ホバー時の背景色 */
+  }
+  #all_mode, #wrong_mode{
+	display: inline-block; /* ブロック要素化 */
+	margin: 10px 5px; /* ボタン間の余白 */
+	padding: 5px 10px; /* ボタン内の余白 */
+	background-color: #0251ee;
+	color: white;
+	text-decoration: none; /* 下線を除去 */
+	border-radius: 5px; /* 角を丸める */
+	font-weight: bold; /* テキストを太字に */
+	text-align: center; /* テキストを中央揃え */
+	transition: background-color 0.3s ease; /* ホバー時のエフェクト */
+  }
+  #all_mode:hover, #wrong_mode:hover{
+	background-color: #0239eec7; /* ホバー時の背景色 */
+  }
+
+  #num {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: bold;
+	color: #333;
+  }
   #container {
 	text-align: center;
-	margin: 30px;
+	margin: 10px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
   }
 
   #container p {
-	font-size:60px;
 	margin:0px;
   }
+  #chn{
+	font-size:60px
+  }
   #output{
-	font-size:80px;
+	font-size:40px;
 	margin:0px;
 	width:600px;
-	height:90px;
+	height:40px;
 	text-align:center;
 }
 
@@ -102,7 +132,7 @@ body {
 
   /* 結果表示用 */
   #result {
-	font-size:10px;
+	font-size:40px;
 	color:brown;
 	transition:0.5s;
 	margin:10px;
@@ -111,7 +141,6 @@ body {
 
   #wrong {
 	color: #e74c3c;
-	font-weight: bold;
   }
 
   /* レスポンシブ対応 */
@@ -129,3 +158,21 @@ body {
 	  padding: 15px;
 	}
   }
+
+  .progress-container {
+	width: 80%;
+	background-color: #eee;
+	border-radius: 10px;
+	position: relative;
+	height: 30px;
+	margin: 20px auto;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#bar {
+	height: 100%;
+	width: 0%;
+	background-color: #eeea02;
+	border-radius: 10px;
+	transition: width 0.3s ease-in-out;
+}
