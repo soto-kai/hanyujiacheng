@@ -142,7 +142,7 @@ window.onload=()=>{
 				break;
 			case 'Enter':
 				e.preventDefault(); // フォームのデフォルト動作を防ぐ
-                btn.click();
+                		btn.click(); //btn要素のクリックに対応させる
 				break;
 			case 'Shift':
 			case 'Control':
@@ -167,7 +167,7 @@ window.onload=()=>{
 			default:
 				input=String(input)+String(e.key);
 			};
-		switch (input.slice(-2)) {
+		switch (input.slice(-2)) { // 直近2文字を取り出し、声調をつける
 			case 'a1':
 				input= String(input.slice(0,input.length-2))+'ā';
 				break;
@@ -243,10 +243,10 @@ window.onload=()=>{
 
 		};
 
-		output.innerHTML = input;
+		output.innerHTML = input; //htmlに表示する
 		return false;
 	};
-	function shuffle_func(a){ //配列をシャッフルする関数
+	function shuffle_func(a){ //配列をシャッフルする関数（ネットからとってきた）
 		const array=a.slice()
 		for (let i=array.length-1;i>=0;i--){
 			const randomIndex=Math.floor(Math.random()*(i+1));
@@ -265,41 +265,41 @@ window.onload=()=>{
 		let msg='';
 		chn.classList.remove("fade");
 		if (ans == words[index][1]){
-			correct++;
+			correct++; //正解数を増やす
 			msg='〇';
 		}else{
 			msg=`× 正:${words[index][1]}`;
-			wrong.push(words[index][0]);
+			wrong.push(words[index][0]); //pythonでいうappend
 			wrongwords.push([String(words[index][0]),String(words[index][1])]);
 		}
 		if(index==words.length-1){
-			index=-1;
+			index=-1; //後で+1するので
 			document.getElementById('wrong').innerHTML=`全${words.length}問中${correct}問正解<br>`+"間違えた単語でもう一度テスト:<br>"+wrong;
-			wrong=[];
+			wrong=[]; //間違えた単語をリセット
 			words=wrongwords;
 			ls.setItem("wrong1", JSON.stringify(wrongwords)) //localStorageに保存。数字は課による
 			wrongwords=[];
 		}
 		input="";
-		output.innerHTML=input;
-		result.innerHTML=msg;
+		output.innerHTML=input; //入力欄をリセット
+		result.innerHTML=msg; //メッセージを表示
 		result.classList.remove('fade');
 		setTimeout(function(){
 			result.classList.add('fade');
-		},1500);
-		setItem(++index);
+		},1500); //○とかをフェードアウトさせる。なんか動いてない。
+		setItem(++index); //indexを一つずらす
 		output.focus();
 
 
 	});
-	function setItem(index){ //中国語を表示
+	function setItem(index){ //プログレスバー
 		chn.textContent=words[index][0];
 		num.innerHTML=`${index+1}問目/全${words.length}問`;
 		document.getElementById("bar").style.width = (index+1)/words.length*100 + "%";
 	}
 	setItem(index);
 	shuffle.addEventListener('click',()=>{ //単語をシャッフル
-		if (index==0){
+		if (index==0){ //面倒なのでindexが一番最初じゃないとシャッフルできないようにしました
 			words=shuffle_func(words);
 			setItem(0);
 			result.innerHTML="単語をシャッフルしました"
@@ -308,7 +308,7 @@ window.onload=()=>{
 		}
 	})
 	all_mode.addEventListener('click',()=>{ //全ての単語モード
-		if (index==0){
+		if (index==0){ //同上
 			words=word_list;
 			setItem(0);
 			result.innerHTML="全ての単語モードに切り替えました"
@@ -318,7 +318,7 @@ window.onload=()=>{
 	})
 	wrong_mode.addEventListener('click',()=>{ //苦手単語モード
 		if (index==0){
-			words=JSON.parse(ls.getItem("wrong1"));
+			words=JSON.parse(ls.getItem("wrong1")); //ここも課によって変える
 			setItem(0);
 			result.innerHTML="苦手単語モードに切り替えました"
 		}else{
