@@ -170,6 +170,7 @@ window.onload = () => {
 	let correct=0;
 
 	btn.addEventListener('click',()=>{
+		
 		let ans=input;
 		let msg='';
 		chn.classList.remove("fade");

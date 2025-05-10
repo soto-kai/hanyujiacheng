@@ -1,7 +1,7 @@
 'use strict';
 window.onload=()=>{
 	const word_list=[
-		["喂","wèi"],
+		["喂","wéi"],
 		["在","zài"],
 		["哪儿","nǎr"],
 		["呢","ne"],
