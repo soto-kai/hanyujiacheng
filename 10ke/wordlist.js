@@ -50,4 +50,6 @@ const word_list = [
     ['中文', 'Zhōngwén'],
     ['重', 'zhòng'],
     ['座[量]', 'zuò']
+    ['狂人日记', 'KuángrénRìjì'],
+    ['爱玲', 'Àilíng'],
 ]
