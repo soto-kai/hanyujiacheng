@@ -84,8 +84,8 @@ const word_list = [
     ['阵雨', 'zhènyǔ'],
     ['正事', 'zhèngshì'],
     ['种[量]', 'zhǒng'],
-    ['主角', 'zhǔjué']
+    ['主角', 'zhǔjué'],
     ['售货机', 'shòuhuòjī'],
     ['美不胜收', 'měibúshèngshōu'],
-    ['各种各样', 'gèzhǒnggèyàng'],
+    ['各种各样', 'gèzhǒnggèyàng']
 ]
